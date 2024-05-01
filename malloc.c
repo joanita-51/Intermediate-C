@@ -12,7 +12,11 @@ int main(){
         *(ptr + 2) = 50;
     }
 
-    printf("The third element equals to %d", *(ptr + 2));
+    // Adding realloc
+    ptr = realloc(ptr, 100*sizeof(*ptr));
+    *(ptr + 30) = 75;
+
+    printf("The third element equals to %d and the 31st element is %d , 2nd elment is %d", *(ptr + 2), *(ptr + 30), *(ptr+1));
     free (ptr);
     return 0;
 }
